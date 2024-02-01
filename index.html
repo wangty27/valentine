@@ -14,6 +14,7 @@
       flex-direction: column;
       height: 98vh;
       width: 98vw;
+      background-image: url(./heart_background.jpg);
     }
 
     #no {
@@ -45,7 +46,8 @@
     }
 
     .btn {
-      background-color: #FFB6C1;
+      background-color: #ff3e5b;
+      color:white;
       padding: 15px 32px;
       text-align: center;
       display: inline-block;
@@ -58,7 +60,7 @@
     }
 
     .btn:hover {
-      background-color: #FAF9F6;
+      opacity: .8;
     }
 
     .gif {
@@ -79,18 +81,18 @@
   </div>
   <h1 id="text">will you be my valentine? :D</h1> 
   <div id="btns" class="buttons">
-    <button class="btn" id="yes" onclick="nextPage()">Yes</button>
-    <button class="btn" id="no" onmouseover="moveButton()">No</button>
+    <button class="btn" id="yes" onclick="yes()">Yes</button>
+    <button class="btn" id="no" onclick="move()" onmouseover="move()">No</button>
   </div>
 
   <script>
-    function nextPage() {
+    function yes() {
       document.getElementById('btns').style.display = 'none';
       document.getElementById('text').innerHTML = 'yippeeee see you on valentine\'s for our date ♥';
       document.getElementById('image').src = 'https://media1.tenor.com/m/_hUq1BSUsiMAAAAC/cat-cute.gif';
     }
 
-    function moveButton() {
+    function move() {
       var x = Math.random() * (window.innerWidth - document.getElementById('no').offsetWidth);
       var y = Math.random() * (window.innerHeight - document.getElementById('no').offsetHeight);
       document.getElementById('no').style.left = `${x}px`;
